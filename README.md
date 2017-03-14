@@ -1,6 +1,7 @@
 # st
 [![npm](https://img.shields.io/npm/v/@jongold/st.svg)](https://www.npmjs.com/package/@jongold/st)
 [![CircleCI](https://circleci.com/gh/jongold/st.svg?style=shield)](https://circleci.com/gh/jongold/st)
+[![FantasyLand](https://img.shields.io/badge/FantasyLand-3-ff69b4.svg)](https://github.com/fantasyland/fantasy-land)
 
 **styling for functional UIs**
 * algebraic style composition
@@ -113,8 +114,8 @@ const MyButton = (props: P) =>
 [<img src="https://raw.github.com/fantasyland/fantasy-land/master/logo.png" align="right" width="82" height="82" alt="Fantasy Land" />][FL]
 [<img src="https://raw.githubusercontent.com/rpominov/static-land/master/logo/logo.png" align="right" height="82" alt="Static Land" />][SL]
 
-**the goal** is [FantasyLand 1][FL1], [FantasyLand 2][FL2],
-[FantasyLand 3][FL3] and [Static Land][SL] compatible `Setoid`, `Semigroup`, `Monoid`, `Functor`, `Apply`, `Applicative`, `Chain`, `ChainRec` and `Monad`.
+**St** implements [FantasyLand 1][FL1], [FantasyLand 2][FL2],
+[FantasyLand 3][FL3] compatible `Semigroup`, `Monoid`, `Functor`, `Apply`, `Applicative`, `Chain`, `ChainRec` and `Monad`.
 
 
 ## Table of contents
