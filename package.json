@@ -1,6 +1,6 @@
 {
   "name": "@jongold/st",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Functional styling",
   "main": "index.js",
   "scripts": {
@@ -51,5 +51,8 @@
     "pre-commit": "^1.2.2",
     "prettier": "^0.22.0",
     "ramda": "^0.23.0"
+  },
+  "dependencies": {
+    "fantasy-land": "^3.1.0"
   }
 }

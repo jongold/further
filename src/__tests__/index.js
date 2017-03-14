@@ -1,3 +1,4 @@
+import fl from "fantasy-land";
 import Style from "../";
 
 describe("constructor", () => {
@@ -30,6 +31,10 @@ describe("Applicative", () => {
     const st = Style.of({});
     expect(st.constructor.of({}) instanceof Style).toBe(true);
   });
+  it("is is fantasy-land compatible", () => {
+    const st = Style.of({});
+    expect(st[fl.of]({}) instanceof Style).toBe(true);
+  });
 });
 
 describe("Semigroup", () => {
@@ -51,6 +56,12 @@ describe("Semigroup", () => {
     const st = Style.of({ color: "blue" }).concat(Style.of({ padding: 20 }));
     expect(st instanceof Style).toBe(true);
   });
+  it("is is fantasy-land compatible", () => {
+    const st = Style.of({ color: "blue" })[fl.concat](
+      Style.of({ padding: 20 })
+    );
+    expect(st instanceof Style).toBe(true);
+  });
 });
 
 describe("Monoid", () => {
@@ -65,6 +76,10 @@ describe("Monoid", () => {
   it("is available on the constructor of the returned Style", () => {
     const st = Style.empty();
     expect(st.constructor.of({}) instanceof Style).toBe(true);
+  });
+  it("is is fantasy-land compatible", () => {
+    const st = Style[fl.empty]();
+    expect(st.of({}) instanceof Style).toBe(true);
   });
   it("implements Semigroup right identity", () => {
     const st = Style.of({ color: "blue" });
@@ -94,6 +109,12 @@ describe("Functor", () => {
 
     expect(st.map(f) instanceof Style).toBe(true);
   });
+  it("is is fantasy-land compatible", () => {
+    const st = Style.of({ color: "blue" });
+    const f = a => a;
+
+    expect(st[fl.map](f) instanceof Style).toBe(true);
+  });
 });
 
 describe("Chain", () => {
@@ -114,6 +135,13 @@ describe("Chain", () => {
 
     expect(st.chain(f) instanceof Style);
   });
+
+  it("is is fantasy-land compatible", () => {
+    const st = Style.of(props => ({ color: props.color }));
+    const f = x => Style.of(props => ({ ...x, margin: props.margin + 1 }));
+
+    expect(st[fl.chain](f) instanceof Style);
+  });
 });
 
 describe("Apply", () => {
@@ -124,6 +152,17 @@ describe("Apply", () => {
 
     const result1 = st.ap(st2.ap(st3.map(f => g => x => f(g(x)))));
     const result2 = st.ap(st2).ap(st3);
+
+    expect(result1.resolve()).toEqual(result2.resolve());
+  });
+
+  it("is is fantasy-land compatible", () => {
+    const st = Style.of(x => ({ ...x, color: "blue" }));
+    const st2 = Style.of(x => ({ ...x, padding: 10 }));
+    const st3 = Style.of(x => ({ ...x, margin: 10 }));
+
+    const result1 = st[fl.ap](st2[fl.ap](st3.map(f => g => x => f(g(x)))));
+    const result2 = st.ap(st2)[fl.ap](st3);
 
     expect(result1.resolve()).toEqual(result2.resolve());
   });
