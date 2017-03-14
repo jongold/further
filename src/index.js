@@ -1,4 +1,5 @@
 // @flow
+import fl from "fantasy-land";
 
 // Style :: => (Props -> CSS) -> Style CSS
 function Style(f) {
@@ -15,6 +16,8 @@ Style.prototype.of = function(a) {
   return new Style(a);
 };
 Style.of = Style.prototype.of;
+Style.prototype[fl.of] = Style.prototype.of;
+Style[fl.of] = Style.of;
 
 // #concat :: Semigroup Style => Style ~> Style -> Style
 Style.prototype.concat = function(a) {
@@ -22,10 +25,13 @@ Style.prototype.concat = function(a) {
     return { ...this.resolve(props), ...a.resolve(props) };
   });
 };
+Style.prototype[fl.concat] = Style.prototype.concat;
 
 // .empty :: Monoid Style => () -> Style
 Style.prototype.empty = () => Style.of({});
 Style.empty = Style.prototype.empty;
+Style.prototype[fl.empty] = Style.prototype.empty;
+Style[fl.empty] = Style.empty;
 
 // #map :: Functor Style => Style a ~> (a -> b) -> Style b
 Style.prototype.map = function(f) {
@@ -33,6 +39,7 @@ Style.prototype.map = function(f) {
     return f(this.resolve(props));
   });
 };
+Style.prototype[fl.map] = Style.prototype.map;
 
 // chain :: Chain Style => Style a ~> (a -> Style b) -> Style b
 Style.prototype.chain = function(f) {
@@ -42,12 +49,14 @@ Style.prototype.chain = function(f) {
     return f(a).resolve(props);
   });
 };
+Style.prototype[fl.chain] = Style.prototype.chain;
 
 // ap :: Apply Style => Style a ~> Style (a -> b) -> Style b )
 Style.prototype.ap = function(a) {
   // eslint-disable-next-line
   return a.chain(f => this.map(f => f));
 };
+Style.prototype[fl.ap] = Style.prototype.ap;
 
 // #resolve :: Style a ~> Props -> CSS
 Style.prototype.resolve = function(props = {}) {
