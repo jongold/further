@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "prettier" 
+  ],
+  "extends": "eslint:recommended",
+  "rules": {
+    "prettier/prettier": ["error", { "trailingComma": "es5" }],
+    "quotes": [2, "double"],
+  },
+  "env": {
+    "jest": true 
+  }
+}
