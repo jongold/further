@@ -17,6 +17,15 @@
         "example",
         "review"
       ]
+    },
+    {
+      "login": "jbaxleyiii",
+      "name": "James Baxley",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4967600?v=3",
+      "profile": "https://newspring.cc",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
