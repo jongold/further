@@ -1,8 +1,7 @@
-[PR for commenting](https://github.com/jongold/st/pull/1)
-
-> this is super early - there's no code and these docs are probably wrong
-
 # st
+[![npm](https://img.shields.io/npm/v/@jongold/st.svg)](https://www.npmjs.com/package/@jongold/st)
+[![CircleCI](https://circleci.com/gh/jongold/st.svg?style=shield)](https://circleci.com/gh/jongold/st)
+
 **styling for functional UIs**
 * algebraic style composition
 * compose evolutions & transformations
