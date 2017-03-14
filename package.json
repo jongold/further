@@ -1,5 +1,5 @@
 {
-  "name": "st",
+  "name": "@jongold/st",
   "version": "0.0.1",
   "description": "Functional styling",
   "main": "index.js",
