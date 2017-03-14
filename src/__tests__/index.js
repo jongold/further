@@ -31,7 +31,7 @@ describe("Applicative", () => {
     const st = Style.of({});
     expect(st.constructor.of({}) instanceof Style).toBe(true);
   });
-  it("is is fantasy-land compatible", () => {
+  it("is fantasy-land compatible", () => {
     const st = Style.of({});
     expect(st[fl.of]({}) instanceof Style).toBe(true);
   });
@@ -56,7 +56,7 @@ describe("Semigroup", () => {
     const st = Style.of({ color: "blue" }).concat(Style.of({ padding: 20 }));
     expect(st instanceof Style).toBe(true);
   });
-  it("is is fantasy-land compatible", () => {
+  it("is fantasy-land compatible", () => {
     const st = Style.of({ color: "blue" })[fl.concat](
       Style.of({ padding: 20 })
     );
@@ -77,7 +77,7 @@ describe("Monoid", () => {
     const st = Style.empty();
     expect(st.constructor.of({}) instanceof Style).toBe(true);
   });
-  it("is is fantasy-land compatible", () => {
+  it("is fantasy-land compatible", () => {
     const st = Style[fl.empty]();
     expect(st.of({}) instanceof Style).toBe(true);
   });
@@ -109,7 +109,7 @@ describe("Functor", () => {
 
     expect(st.map(f) instanceof Style).toBe(true);
   });
-  it("is is fantasy-land compatible", () => {
+  it("is fantasy-land compatible", () => {
     const st = Style.of({ color: "blue" });
     const f = a => a;
 
@@ -136,7 +136,7 @@ describe("Chain", () => {
     expect(st.chain(f) instanceof Style);
   });
 
-  it("is is fantasy-land compatible", () => {
+  it("is fantasy-land compatible", () => {
     const st = Style.of(props => ({ color: props.color }));
     const f = x => Style.of(props => ({ ...x, margin: props.margin + 1 }));
 
@@ -156,7 +156,7 @@ describe("Apply", () => {
     expect(result1.resolve()).toEqual(result2.resolve());
   });
 
-  it("is is fantasy-land compatible", () => {
+  it("is fantasy-land compatible", () => {
     const st = Style.of(x => ({ ...x, color: "blue" }));
     const st2 = Style.of(x => ({ ...x, padding: 10 }));
     const st3 = Style.of(x => ({ ...x, margin: 10 }));
