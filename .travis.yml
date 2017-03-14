@@ -1,0 +1,18 @@
+sudo: required
+language: node_js
+node_js:
+  - "7"
+  - "6"
+
+cache:
+  yarn: true
+  directories:
+    - $HOME/.npm
+    - $HOME/.yarn-cache
+    - node_modules
+
+script:
+  - yarn
+  - yarn lint
+  - yarn test
+
