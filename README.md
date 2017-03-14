@@ -172,7 +172,7 @@ Style.of({
 ### Transforming Styles
 
 #### concat
-##### `#concat :: Style a ~> a ~> Style a`
+##### `#concat :: Style a ~> Style a ~> Style a`
 [semigroup](FL:semigroup)
 ```js
 Style.of({ fontWeight: 'bold', fontSize: 14 }).concat({ fontSize: 16, backgroundColor: 'red' })
