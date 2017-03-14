@@ -127,7 +127,6 @@ const MyButton = (props: P) =>
     * [Style](#style)
     * [of](#of)
   1. [Transforming Styles](#transforming-styles)
-    * [equals](#equals)
     * [concat](#concat)
     * [empty](#empty)
     * [map](#map)
@@ -171,20 +170,6 @@ Style.of({
 ```
 
 ### Transforming Styles
-
-#### equals
-##### `#equals :: Style a ~> Style a -> Boolean`
-[setoid](FL:setoid)
-```js
-// TODO: maybe the equality should be checked AFTER resolution?
-
-Style.of({ color: 'red' }).equals(Style.of({ color: 'red' }))
-// true
-
-Style.of({ color: 'red' }).equals(Style.of({ color: 'blue' }))
-// false
-
-```
 
 #### concat
 ##### `#concat :: Style a ~> a ~> Style a`
