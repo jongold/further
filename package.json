@@ -1,6 +1,6 @@
 {
   "name": "@jongold/st",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Functional styling",
   "main": "index.js",
   "scripts": {
