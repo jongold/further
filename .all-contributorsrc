@@ -1,0 +1,20 @@
+{
+  "projectName": "st",
+  "projectOwner": "jongold",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "jongold",
+      "name": "Jon Gold",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/591643?v=3",
+      "profile": "http://jon.gold",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ]
+}

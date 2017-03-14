@@ -266,3 +266,14 @@ const Button = props =>
 [FL:semigroup]:          https://github.com/fantasyland/fantasy-land#semigroup
 [FL:setoid]:          https://github.com/fantasyland/fantasy-land#setoid
 [FL:moinoid]: https://github.com/fantasyland/fantasy-land#monoid
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars1.githubusercontent.com/u/591643?v=3" width="100px;"/><br /><sub>Jon Gold</sub>](http://jon.gold)<br />[📖](https://github.com/jongold/st/commits?author=jongold) |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
