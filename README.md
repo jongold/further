@@ -112,7 +112,6 @@ const MyButton = (props: P) =>
 
 ## Interoperability
 [<img src="https://raw.github.com/fantasyland/fantasy-land/master/logo.png" align="right" width="82" height="82" alt="Fantasy Land" />][FL]
-[<img src="https://raw.githubusercontent.com/rpominov/static-land/master/logo/logo.png" align="right" height="82" alt="Static Land" />][SL]
 
 **St** implements [FantasyLand 1][FL1], [FantasyLand 2][FL2],
 [FantasyLand 3][FL3] compatible `Semigroup`, `Monoid`, `Functor`, `Apply`, `Applicative`, `Chain`, `ChainRec` and `Monad`.
