@@ -944,6 +944,10 @@ d@^0.1.1, d@~0.1.1:
   dependencies:
     es5-ext "~0.10.2"
 
+daggy@0.0.x:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/daggy/-/daggy-0.0.1.tgz#ae9c932c9f7136e655a04afb21e8baadfd0d3707"
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
@@ -1262,6 +1266,17 @@ extglob@^0.3.1:
 extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
+
+fantasy-combinators@0.0.x:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/fantasy-combinators/-/fantasy-combinators-0.0.1.tgz#d18388aed94be790ac4069031f5ea018345e33a1"
+
+fantasy-land@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/fantasy-land/-/fantasy-land-3.1.0.tgz#7d13a499066197f983deda539af61246fb937ea0"
+  dependencies:
+    daggy "0.0.x"
+    fantasy-combinators "0.0.x"
 
 fast-levenshtein@~2.0.4:
   version "2.0.6"

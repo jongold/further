@@ -3,17 +3,20 @@ import fl from "fantasy-land";
 
 // Style :: => (Props -> CSS) -> Style CSS
 function Style(f) {
-  if (!(this instanceof Style)) {
-    return new Style(f);
+  if (!(this instanceof Style)) return new Style(f);
+  if (typeof f !== "function") {
+    throw new TypeError(
+      `Style expects to be called with a function. Actual ${f}`
+    );
   }
 
-  this.__value = typeof f === "function" ? f : () => f;
+  this.__value = f;
   return this;
 }
 
 // .of :: Applicative a -> Style a
 Style.prototype.of = function(a) {
-  return new Style(a);
+  return new Style(() => a);
 };
 Style.of = Style.prototype.of;
 Style.prototype[fl.of] = Style.prototype.of;
