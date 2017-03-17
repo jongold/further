@@ -3,7 +3,7 @@ import Style from "../";
 
 describe("constructor", () => {
   it("retuns an instance without calling new", () => {
-    const st = Style({});
+    const st = Style(() => ({}));
     expect(st instanceof Style).toBe(true);
   });
 
@@ -12,9 +12,11 @@ describe("constructor", () => {
     expect(st.__value()).toEqual({ foo: "bar" });
   });
 
-  it("auto wraps an object if passed", () => {
-    const st = Style({ foo: "bar" });
-    expect(st.__value()).toEqual({ foo: "bar" });
+  it("should error if anything other than a function is passed", () => {
+    expect(() => Style({ foo: "bar" })).toThrowError(TypeError);
+    expect(() => Style(5)).toThrowError(TypeError);
+    expect(() => Style("foo")).toThrowError(TypeError);
+    expect(() => Style(true)).toThrowError(TypeError);
   });
 });
 
@@ -119,9 +121,9 @@ describe("Functor", () => {
 
 describe("Chain", () => {
   it("st.chain(f).chain(g) is equivalent to st.chain(x => f(x).chain(g)) (associativity)", () => {
-    const st = Style.of(props => ({ color: props.color }));
-    const f = x => Style.of(props => ({ ...x, margin: props.margin + 1 }));
-    const g = x => Style.of(props => ({ ...x, padding: props.padding / 2 }));
+    const st = Style(props => ({ color: props.color }));
+    const f = x => Style(props => ({ ...x, margin: props.margin + 1 }));
+    const g = x => Style(props => ({ ...x, padding: props.padding / 2 }));
 
     const result1 = st.chain(f).chain(g);
     const result2 = st.chain(x => f(x).chain(g));
@@ -170,11 +172,11 @@ describe("Apply", () => {
 
 describe("resolve", () => {
   it("passes a default object if no props", () => {
-    const st = Style.of(x => ({ ...x, color: "blue" }));
+    const st = Style(x => ({ ...x, color: "blue" }));
     expect(st.resolve()).toEqual({ color: "blue" });
   });
   it("executes the value of the Style with the passed object", () => {
-    const st = Style.of(x => ({ ...x, color: "blue" }));
+    const st = Style(x => ({ ...x, color: "blue" }));
     expect(st.resolve({ padding: 10 })).toEqual({ padding: 10, color: "blue" });
   });
 });
