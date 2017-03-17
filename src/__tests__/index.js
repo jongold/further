@@ -180,3 +180,36 @@ describe("resolve", () => {
     expect(st.resolve({ padding: 10 })).toEqual({ padding: 10, color: "blue" });
   });
 });
+
+it("remaps common prototypes for component names", () => {
+  const st = Style.of({ color: "blue" });
+
+  // class => map
+  expect(st.map(_ => _).resolve({})).toEqual(st.class(_ => _).resolve({}));
+
+  // add => concat
+  expect(st.concat(Style.of({ backgroundColor: "pink" })).resolve({})).toEqual(
+    st.add(Style.of({ backgroundColor: "pink" })).resolve({})
+  );
+
+  const apst = Style(_ => ({ ..._ }));
+  // apply = ap
+  expect(apst.ap(Style.of({ color: "blue" })).resolve()).toEqual(
+    apst.apply(Style.of({ color: "blue" })).resolve()
+  );
+});
+
+it("supports an if method where true runs a function", () => {
+  const st = Style.of({ color: "blue" });
+  const result1 = { color: "green" };
+
+  expect(st.if(() => false, () => result1).resolve()).toEqual({
+    color: "blue",
+  });
+});
+it("supports an if method where true runs a function", () => {
+  const st = Style.of({ color: "blue" });
+  const result1 = { color: "green" };
+
+  expect(st.if(() => true, () => result1).resolve()).toEqual(result1);
+});
