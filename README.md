@@ -257,8 +257,8 @@ const Button = props =>
 Made with love and monads by ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars1.githubusercontent.com/u/591643?v=3" width="100px;"/><br /><sub>Jon Gold</sub>](http://jon.gold)<br />[📖](https://github.com/jongold/st/commits?author=jongold) 💡 👀 | [<img src="https://avatars1.githubusercontent.com/u/4967600?v=3" width="100px;"/><br /><sub>James Baxley</sub>](https://newspring.cc)<br />[💻](https://github.com/jongold/st/commits?author=jbaxleyiii) |
-| :---: | :---: |
+| [<img src="https://avatars1.githubusercontent.com/u/591643?v=3" width="100px;"/><br /><sub>Jon Gold</sub>](http://jon.gold)<br />[📖](https://github.com/jongold/st/commits?author=jongold) 💡 👀 | [<img src="https://avatars1.githubusercontent.com/u/4967600?v=3" width="100px;"/><br /><sub>James Baxley</sub>](https://newspring.cc)<br />[💻](https://github.com/jongold/st/commits?author=jbaxleyiii) | [<img src="https://avatars2.githubusercontent.com/u/9259509?v=3" width="100px;"/><br /><sub>Jake Dawkins</sub>](http://jakedawkins.com)<br />[💻](https://github.com/jongold/st/commits?author=JakeDawkins) |
+| :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 <!-- References -->
