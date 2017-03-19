@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jongold/st.git"
+    "url": "git+https://github.com/jongold/further.git"
   },
   "keywords": [
     "fantasyland",
@@ -34,9 +34,9 @@
   "author": "jongold",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jongold/st/issues"
+    "url": "https://github.com/jongold/further/issues"
   },
-  "homepage": "https://github.com/jongold/st#readme",
+  "homepage": "https://github.com/jongold/further#readme",
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
