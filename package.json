@@ -1,7 +1,7 @@
 {
-  "name": "@jongold/st",
+  "name": "@jongold/further",
   "version": "0.1.1",
-  "description": "Functional styling",
+  "description": "Further adventures down the functional styling rabbit hole",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -27,6 +27,8 @@
     "fantasyland",
     "static-land",
     "style",
+    "css",
+    "functional-css",
     "react"
   ],
   "author": "jongold",

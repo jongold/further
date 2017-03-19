@@ -1,16 +1,19 @@
-# st
-[![npm](https://img.shields.io/npm/v/@jongold/st.svg)](https://www.npmjs.com/package/@jongold/st)
-[![CircleCI](https://circleci.com/gh/jongold/st.svg?style=shield)](https://circleci.com/gh/jongold/st)
+# Further
+[![npm](https://img.shields.io/npm/v/@jongold/further.svg)](https://www.npmjs.com/package/@jongold/further)
+[![CircleCI](https://circleci.com/gh/jongold/further.svg?style=shield)](https://circleci.com/gh/jongold/further)
 [![FantasyLand](https://img.shields.io/badge/FantasyLand-3-ff69b4.svg)](https://github.com/fantasyland/fantasy-land)
 
-**styling for functional UIs**
-* algebraic style composition
-* compose evolutions & transformations
-* abstract interaction with props
+Further adventures
+down the functional styling rabbit hole
+leading to the fantasy land
+
+* 🦄 algebraic style composition
+* 🌈 compose evolutions & transformations
+* 🍄 abstract interaction with props
 
 ## Usage
 ```js
-import Style from '@jongold/st';
+import Style from '@jongold/further';
 import { add, always, compose as c, evolve } from 'ramda';
 import chroma from 'chroma';
 import { Touchable, View } from 'react-primitives'; // or react-native etc
@@ -113,7 +116,7 @@ const MyButton = (props: P) =>
 ## Interoperability
 [<img src="https://raw.github.com/fantasyland/fantasy-land/master/logo.png" align="right" width="82" height="82" alt="Fantasy Land" />][FL]
 
-**St** implements [FantasyLand 1][FL1], [FantasyLand 2][FL2],
+**Further** implements [FantasyLand 1][FL1], [FantasyLand 2][FL2],
 [FantasyLand 3][FL3] compatible `Semigroup`, `Monoid`, `Functor`, `Apply`, `Applicative`, `Chain`, `ChainRec` and `Monad`.
 
 
