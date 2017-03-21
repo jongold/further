@@ -1,6 +1,6 @@
 {
   "name": "@jongold/further",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Further adventures down the functional styling rabbit hole",
   "main": "lib/index.js",
   "scripts": {
