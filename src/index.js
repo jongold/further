@@ -30,7 +30,6 @@ Style.prototype.concat = function(a) {
   });
 };
 Style.prototype[fl.concat] = Style.prototype.concat;
-Style.prototype.add = Style.prototype.concat;
 
 // .empty :: Monoid Style => () -> Style
 Style.prototype.empty = () => Style.of({});
@@ -45,7 +44,6 @@ Style.prototype.map = function(f) {
   });
 };
 Style.prototype[fl.map] = Style.prototype.map;
-Style.prototype.class = Style.prototype.map;
 
 // chain :: Chain Style => Style a ~> (a -> Style b) -> Style b
 Style.prototype.chain = function(f) {
@@ -63,7 +61,6 @@ Style.prototype.ap = function(a) {
   return a.chain(f => this.map(f => f));
 };
 Style.prototype[fl.ap] = Style.prototype.ap;
-Style.prototype.apply = Style.prototype.ap;
 
 // #resolve :: Style a ~> Props -> CSS
 Style.prototype.resolve = function(props = {}) {
