@@ -65,6 +65,7 @@
   },
   "dependencies": {
     "fantasy-land": "^3.1.0",
-    "fela": "^4.2.6"
+    "fela": "^4.2.6",
+    "react": "^15.4.2"
   }
 }
