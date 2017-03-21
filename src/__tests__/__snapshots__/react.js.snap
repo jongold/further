@@ -1,14 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`react-web integration Allows adding to the component conditionally (false) 1`] = `
+exports[`react-native integration Allows concating on the component 1`] = `
 <div
-  className="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\"}"
+  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
+  theme={Object {}}
 />
 `;
 
-exports[`react-web integration Allows adding to the component conditionally (true) 1`] = `
+exports[`react-native integration Allows concating on the component with add 1`] = `
 <div
-  className="{\\"padding\\":10}"
+  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
+  theme={Object {}}
+/>
+`;
+
+exports[`react-native integration Allows mapping on the component 1`] = `
+<div
+  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
+  theme={Object {}}
+/>
+`;
+
+exports[`react-native integration Allows mapping on the component using class 1`] = `
+<div
+  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
+  theme={Object {}}
+/>
+`;
+
+exports[`react-native integration has a render function which returns a react component 1`] = `
+<div
+  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\"}"
+  theme={Object {}}
 />
 `;
 

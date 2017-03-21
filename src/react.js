@@ -1,17 +1,16 @@
 // @flow
 import { createElement, PropTypes } from "react";
 
-import Style from "./";
 import filterProps from "./utils/validAttrs";
 
-Style.prototype.render = function(type = "div") {
+const render = function(type = "div") {
   const StyleComponent = ({ children, ...props }, { theme, renderer }) => {
     if (!renderer) {
       const componentName = type.displayName ? type.displayName : type;
       throw new Error(
         `
         render() can't render styles for the component '${componentName}' without a
-        Style renderer in the context. Are you missing react-junction's <Provider /> at the app root?
+        Style renderer in the context. Are you missing further's <Provider /> at the app root?
       `
       );
     }
@@ -60,9 +59,7 @@ Style.prototype.render = function(type = "div") {
   StyleComponent.concat = f => this.concat(f).render(type);
   StyleComponent.add = StyleComponent.concat;
 
-  StyleComponent.if = (c, f) => this.if(c, f).render(type);
-
   return StyleComponent;
 };
 
-export default Style;
+export default render;

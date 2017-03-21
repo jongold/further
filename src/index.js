@@ -1,5 +1,6 @@
 // @flow
 import fl from "fantasy-land";
+import render from "./react";
 
 // Style :: => (Props -> CSS) -> Style CSS
 function Style(f) {
@@ -64,18 +65,12 @@ Style.prototype.ap = function(a) {
 Style.prototype[fl.ap] = Style.prototype.ap;
 Style.prototype.apply = Style.prototype.ap;
 
-// if :: Style a => (a -> bool) -> Style b
-Style.prototype.if = function(cond, f) {
-  return new Style(props => {
-    const render = cond(props);
-    if (render) return f(this.resolve(props));
-    return this.resolve(props);
-  });
-};
-
 // #resolve :: Style a ~> Props -> CSS
 Style.prototype.resolve = function(props = {}) {
   return this.__value(props);
 };
+
+// #render :: Style a ~> React<Component> -> React<Component>
+Style.prototype.render = render;
 
 export default Style;

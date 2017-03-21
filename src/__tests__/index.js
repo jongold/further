@@ -198,18 +198,3 @@ it("remaps common prototypes for component names", () => {
     apst.apply(Style.of({ color: "blue" })).resolve()
   );
 });
-
-it("supports an if method where true runs a function", () => {
-  const st = Style.of({ color: "blue" });
-  const result1 = { color: "green" };
-
-  expect(st.if(() => false, () => result1).resolve()).toEqual({
-    color: "blue",
-  });
-});
-it("supports an if method where true runs a function", () => {
-  const st = Style.of({ color: "blue" });
-  const result1 = { color: "green" };
-
-  expect(st.if(() => true, () => result1).resolve()).toEqual(result1);
-});
