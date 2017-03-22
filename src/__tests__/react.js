@@ -46,42 +46,12 @@ describe("react-web integration", () => {
       padding: 10,
     });
   });
-  it("Allows mapping on the component using class", () => {
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
-
-    const padding = style => ({ ...style, padding: 10 });
-    const NewLink = Link.class(padding);
-
-    const tree = renderer.create(<W><NewLink /></W>);
-    expect(tree).toMatchSnapshot();
-    expect(generated).toBeCalledWith({
-      color: "inherit",
-      textDecoration: "none",
-      padding: 10,
-    });
-  });
   it("Allows concating on the component", () => {
     const Link = Style.of({ color: "inherit", textDecoration: "none" })
       .render("div");
 
     const padding = Style.of({ padding: 10 });
     const NewLink = Link.concat(padding);
-
-    const tree = renderer.create(<W><NewLink /></W>);
-    expect(tree).toMatchSnapshot();
-    expect(generated).toBeCalledWith({
-      color: "inherit",
-      textDecoration: "none",
-      padding: 10,
-    });
-  });
-  it("Allows concating on the component with add", () => {
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
-
-    const padding = Style.of({ padding: 10 });
-    const NewLink = Link.add(padding);
 
     const tree = renderer.create(<W><NewLink /></W>);
     expect(tree).toMatchSnapshot();
@@ -135,42 +105,12 @@ describe("react-native integration", () => {
       padding: 10,
     });
   });
-  it("Allows mapping on the component using class", () => {
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
-
-    const padding = style => ({ ...style, padding: 10 });
-    const NewLink = Link.class(padding);
-
-    const tree = renderer.create(<W><NewLink /></W>);
-    expect(tree).toMatchSnapshot();
-    expect(generated).toBeCalledWith({
-      color: "inherit",
-      textDecoration: "none",
-      padding: 10,
-    });
-  });
   it("Allows concating on the component", () => {
     const Link = Style.of({ color: "inherit", textDecoration: "none" })
       .render("div");
 
     const padding = Style.of({ padding: 10 });
     const NewLink = Link.concat(padding);
-
-    const tree = renderer.create(<W><NewLink /></W>);
-    expect(tree).toMatchSnapshot();
-    expect(generated).toBeCalledWith({
-      color: "inherit",
-      textDecoration: "none",
-      padding: 10,
-    });
-  });
-  it("Allows concating on the component with add", () => {
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
-
-    const padding = Style.of({ padding: 10 });
-    const NewLink = Link.add(padding);
 
     const tree = renderer.create(<W><NewLink /></W>);
     expect(tree).toMatchSnapshot();

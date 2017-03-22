@@ -54,10 +54,7 @@ const render = function(type = "div") {
   };
 
   StyleComponent.map = f => this.map(f).render(type);
-  StyleComponent.class = StyleComponent.map;
-
   StyleComponent.concat = f => this.concat(f).render(type);
-  StyleComponent.add = StyleComponent.concat;
 
   return StyleComponent;
 };

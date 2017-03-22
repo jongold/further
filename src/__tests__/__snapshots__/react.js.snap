@@ -7,21 +7,7 @@ exports[`react-native integration Allows concating on the component 1`] = `
 />
 `;
 
-exports[`react-native integration Allows concating on the component with add 1`] = `
-<div
-  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
-  theme={Object {}}
-/>
-`;
-
 exports[`react-native integration Allows mapping on the component 1`] = `
-<div
-  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
-  theme={Object {}}
-/>
-`;
-
-exports[`react-native integration Allows mapping on the component using class 1`] = `
 <div
   style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
   theme={Object {}}
@@ -41,19 +27,7 @@ exports[`react-web integration Allows concating on the component 1`] = `
 />
 `;
 
-exports[`react-web integration Allows concating on the component with add 1`] = `
-<div
-  className="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
-/>
-`;
-
 exports[`react-web integration Allows mapping on the component 1`] = `
-<div
-  className="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
-/>
-`;
-
-exports[`react-web integration Allows mapping on the component using class 1`] = `
 <div
   className="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
 />
