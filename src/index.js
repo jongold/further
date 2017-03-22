@@ -1,6 +1,8 @@
 // @flow
 import fl from "fantasy-land";
-import render from "./react";
+import render, { Provider } from "./react";
+
+export { Provider };
 
 // Style :: => (Props -> CSS) -> Style CSS
 function Style(f) {

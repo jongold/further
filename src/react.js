@@ -1,5 +1,9 @@
 // @flow
+// this is slight variation on
+// https://github.com/rofrischmann/fela/blob/master/modules/bindings/react/createComponent.js
 import { createElement, PropTypes } from "react";
+import Provider from "fela/lib/bindings/react/Provider";
+export { Provider };
 
 import filterProps from "./utils/validAttrs";
 
@@ -10,7 +14,7 @@ const render = function(type = "div") {
       throw new Error(
         `
         render() can't render styles for the component '${componentName}' without a
-        Style renderer in the context. Are you missing further's <Provider /> at the app root?
+        renderer in the context. Are you missing further's <Provider /> at the app root?
       `
       );
     }

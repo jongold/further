@@ -1,8 +1,20 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Provider from "fela/lib/bindings/react/Provider";
 
-import Style from "../";
+import Style, { Provider } from "../";
+
+it("throws if not renderer found in the context", () => {
+  const Link = Style.of({ color: "inherit", textDecoration: "none" }).render(
+    "div"
+  );
+
+  const NewLink = Link.map(style => ({ ...style, padding: 10 }));
+  try {
+    renderer.create(<NewLink />);
+  } catch (e) {
+    expect(e.message).toContain("render() can't render");
+  }
+});
 
 describe("react-web integration", () => {
   let W;
@@ -21,10 +33,13 @@ describe("react-web integration", () => {
 
   it("has a render function which returns a react component", () => {
     // eslint-disable-next-line
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
+    const Link = Style.of({ color: "inherit", textDecoration: "none" }).render(
+      "div"
+    );
 
-    const tree = renderer.create(<W><Link /></W>);
+    const tree = renderer.create(
+      <W><Link style={{ backgroundColor: "blue" }} /></W>
+    );
     expect(tree).toMatchSnapshot();
 
     expect(generated).toBeCalledWith({
@@ -32,12 +47,28 @@ describe("react-web integration", () => {
       textDecoration: "none",
     });
   });
+  it("allows choosing type via props", () => {
+    // eslint-disable-next-line
+    const Link = Style.of({ color: "inherit", textDecoration: "none" }).render(
+      "div"
+    );
+
+    const tree = renderer.create(<W><Link is="span" /></W>);
+    expect(tree).toMatchSnapshot();
+
+    expect(generated).toBeCalledWith({
+      color: "inherit",
+      textDecoration: "none",
+    });
+  });
+
   it("Allows mapping on the component", () => {
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
+    const Link = Style.of({ color: "inherit", textDecoration: "none" }).render(
+      "div"
+    );
 
     const NewLink = Link.map(style => ({ ...style, padding: 10 }));
-    const tree = renderer.create(<W><NewLink /></W>);
+    const tree = renderer.create(<W><NewLink id="10" /></W>);
     expect(tree).toMatchSnapshot();
 
     expect(generated).toBeCalledWith({
@@ -47,8 +78,9 @@ describe("react-web integration", () => {
     });
   });
   it("Allows concating on the component", () => {
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
+    const Link = Style.of({ color: "inherit", textDecoration: "none" }).render(
+      "div"
+    );
 
     const padding = Style.of({ padding: 10 });
     const NewLink = Link.concat(padding);
@@ -80,8 +112,9 @@ describe("react-native integration", () => {
 
   it("has a render function which returns a react component", () => {
     // eslint-disable-next-line
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
+    const Link = Style.of({ color: "inherit", textDecoration: "none" }).render(
+      "div"
+    );
 
     const tree = renderer.create(<W><Link /></W>);
     expect(tree).toMatchSnapshot();
@@ -92,8 +125,9 @@ describe("react-native integration", () => {
     });
   });
   it("Allows mapping on the component", () => {
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
+    const Link = Style.of({ color: "inherit", textDecoration: "none" }).render(
+      "div"
+    );
 
     const NewLink = Link.map(style => ({ ...style, padding: 10 }));
     const tree = renderer.create(<W><NewLink /></W>);
@@ -106,8 +140,9 @@ describe("react-native integration", () => {
     });
   });
   it("Allows concating on the component", () => {
-    const Link = Style.of({ color: "inherit", textDecoration: "none" })
-      .render("div");
+    const Link = Style.of({ color: "inherit", textDecoration: "none" }).render(
+      "div"
+    );
 
     const padding = Style.of({ padding: 10 });
     const NewLink = Link.concat(padding);
