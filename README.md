@@ -35,9 +35,9 @@ const brandify = evolve({
 });
 
 // and some primitive styles
-const boxShadow = {
+const boxShadow = Style.of({
   boxShadow: '0 2px 3px rgba(0,0,0,.25)',
-};
+});
 
 // encapsulate a style that varies on props
 const GenericButtonStyle = Style(props => ({
@@ -177,7 +177,7 @@ Style.of({
 ##### `#concat :: Style a ~> Style a ~> Style a`
 [semigroup](FL:semigroup)
 ```js
-Style.of({ fontWeight: 'bold', fontSize: 14 }).concat({ fontSize: 16, backgroundColor: 'red' })
+Style.of({ fontWeight: 'bold', fontSize: 14 }).concat(Style.of({ fontSize: 16, backgroundColor: 'red' }))
 // Style({ fontWeight: 'bold', fontSize: 16, backgroundColor: 'red' }))
 ```
 
