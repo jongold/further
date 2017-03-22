@@ -87,7 +87,10 @@ describe("composition creation", () => {
     expect(st1.resolve()).toEqual(st2.resolve());
   });
   it("returns a Style", () => {
-    const st = Style.of({ color: "blue" }).concat(Style.of({ padding: 20 }));
+    const st = Style.from([
+      Style.of({ color: "blue" }),
+      Style.of({ padding: 20 }),
+    ]);
     expect(st instanceof Style).toBe(true);
   });
 });
