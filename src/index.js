@@ -1,5 +1,8 @@
 // @flow
 import fl from "fantasy-land";
+import render, { Provider } from "./react";
+
+export { Provider };
 
 // Style :: => (Props -> CSS) -> Style CSS
 function Style(f) {
@@ -78,5 +81,8 @@ Style.prototype[fl.ap] = Style.prototype.ap;
 Style.prototype.resolve = function(props = {}) {
   return this.__value(props);
 };
+
+// #render :: Style a ~> React<Component> -> React<Component>
+Style.prototype.render = render;
 
 export default Style;

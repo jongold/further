@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-native integration Allows concating on the component 1`] = `
+<div
+  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
+  theme={Object {}}
+/>
+`;
+
+exports[`react-native integration Allows mapping on the component 1`] = `
+<div
+  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
+  theme={Object {}}
+/>
+`;
+
+exports[`react-native integration has a render function which returns a react component 1`] = `
+<div
+  style="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\"}"
+  theme={Object {}}
+/>
+`;
+
+exports[`react-web integration Allows concating on the component 1`] = `
+<div
+  className="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
+/>
+`;
+
+exports[`react-web integration Allows mapping on the component 1`] = `
+<div
+  className="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\",\\"padding\\":10}"
+  id="10"
+/>
+`;
+
+exports[`react-web integration allows choosing type via props 1`] = `
+<span
+  className="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\"}"
+  is="span"
+/>
+`;
+
+exports[`react-web integration has a render function which returns a react component 1`] = `
+<div
+  className="{\\"color\\":\\"inherit\\",\\"textDecoration\\":\\"none\\"}"
+  style={
+    Object {
+      "backgroundColor": "blue",
+    }
+  }
+/>
+`;

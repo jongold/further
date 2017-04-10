@@ -1,9 +1,9 @@
 {
   "parser": "babel-eslint",
   "plugins": [
-    "prettier" 
+    "prettier", "react"
   ],
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "prettier/prettier": ["error", { "trailingComma": "es5" }],
     "quotes": [2, "double"],
