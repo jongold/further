@@ -66,6 +66,35 @@ describe("Semigroup", () => {
   });
 });
 
+describe("composition creation", () => {
+  it("joins two Style's together", () => {
+    const st = Style.of({ color: "blue" }).concat(Style.of({ padding: 20 }));
+    const st2 = Style.from([
+      Style.of({ color: "blue" }),
+      Style.of({ padding: 20 }),
+    ]);
+
+    expect(st2.resolve()).toEqual(st.resolve());
+  });
+  it("is associative", () => {
+    const a = Style.of({ color: "blue" });
+    const b = Style.of({ padding: 20 });
+    const c = Style.of({ margin: 10 });
+
+    const st1 = a.concat(b).concat(c);
+    const st2 = a.from([b, c]);
+
+    expect(st1.resolve()).toEqual(st2.resolve());
+  });
+  it("returns a Style", () => {
+    const st = Style.from([
+      Style.of({ color: "blue" }),
+      Style.of({ padding: 20 }),
+    ]);
+    expect(st instanceof Style).toBe(true);
+  });
+});
+
 describe("Monoid", () => {
   it("is a static function which returns a Style", () => {
     const st = Style.empty();

@@ -54,6 +54,19 @@ Style.prototype.chain = function(f) {
 };
 Style.prototype[fl.chain] = Style.prototype.chain;
 
+// from :: Array Style -> Style
+Style.prototype.from = function(arr) {
+  return new Style(props => {
+    return arr
+      .reduce(
+        (x, y) => x.concat(y),
+        this instanceof Style ? this : Style.empty()
+      )
+      .resolve(props);
+  });
+};
+Style.from = Style.prototype.from;
+
 // ap :: Apply Style => Style a ~> Style (a -> b) -> Style b )
 Style.prototype.ap = function(a) {
   // eslint-disable-next-line
