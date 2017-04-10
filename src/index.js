@@ -1,5 +1,6 @@
 // @flow
 import fl from "fantasy-land";
+import setArgs from "./setArgs";
 
 // Style :: => (Props -> CSS) -> Style CSS
 function Style(f) {
@@ -78,5 +79,8 @@ Style.prototype[fl.ap] = Style.prototype.ap;
 Style.prototype.resolve = function(props = {}) {
   return this.__value(props);
 };
+
+// #setArgs :: Style ~> (a -> a) -> Style
+Style.prototype.setArgs = setArgs;
 
 export default Style;
